@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0A0A0A;
+  --color-foreground: #FFFFFF;
+  --color-accent: #FF2E2E;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+
+  @keyframes glow {
+    0% { box-shadow: 0 0 5px #FF2E2E, 0 0 10px #FF2E2E; }
+    100% { box-shadow: 0 0 20px #FF2E2E, 0 0 30px #FF2E2E; }
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom cursors and glow effects */
+.glow-text {
+  text-shadow: 0 0 20px rgba(255, 46, 46, 0.5);
+}
+
+.glow-border {
+  box-shadow: 0 0 15px rgba(255, 46, 46, 0.3);
+}
+
+/* Noise texture overlay */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.03;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Cfilter id='noiseFilter'%3%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3%3C/filter%3%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3%3C/svg%3");
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Section transitions */
+.section-enter {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+}
+
+/* Horizontal marquee */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
