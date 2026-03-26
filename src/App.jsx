@@ -98,7 +98,7 @@ function App() {
       </div>
 
       <footer className="py-12 text-center text-white/20 text-[10px] uppercase tracking-[0.4em]">
-        &copy; 2024 AI Tool Ecosystem • Built for the Future
+        &copy; 2026 AI Tool Ecosystem • Built for the Future
       </footer>
     </div>
   );
