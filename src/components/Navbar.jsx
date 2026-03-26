@@ -11,7 +11,7 @@ const Navbar = () => {
       >
         AI <span className="text-[#FF2E2E]">ECOSYSTEM</span>
       </motion.div>
-      
+{/*       
       <div className="flex gap-8 items-center list-none">
         {['Features', 'Tools', 'Vision'].map((item, i) => (
           <motion.li
@@ -24,7 +24,7 @@ const Navbar = () => {
             {item}
           </motion.li>
         ))}
-      </div>
+      </div> */}
       
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
